@@ -1,0 +1,12 @@
+# Declarative list of official pages to ingest.
+# Tip: start small (5–10 URLs), expand once pipeline works.
+
+# Canonical architecture page that applies to Apigee & Apigee hybrid
+- url: https://cloud.google.com/apigee/docs/api-platform/architecture/overview
+  product: Hybrid
+  topic: topology
+
+# A concrete setup page in the install flow
+- url: https://cloud.google.com/apigee/docs/hybrid/v1.9/install-before-begin
+  product: Hybrid
+  topic: runtime_setup

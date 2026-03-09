@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Scratch Bot</title>
+<style>
+body{font-family:sans-serif;max-width:620px;margin:40px auto;}
+#log{border:1px solid #ccc;padding:10px;height:320px;overflow-y:auto;margin-bottom:8px;}
+.me{color:#06c;margin:4px 0;}
+.bot{color:#090;margin:4px 0;}
+</style>
+</head>
+<body>
+<h2>Scratch Bot</h2>
+
+<div id="log"></div>
+
+<input id="q" placeholder="Type a question…" style="width:78%;">
+<button onclick="ask()">Ask</button>
+
+<script>
+async function ask(){
+  const box=document.getElementById('q');
+  const q=box.value.trim();
+  if(!q) return;
+  append('me',q);
+  box.value='';
+  const r=await fetch('/ask?q='+encodeURIComponent(q));
+  const data=await r.json();
+  append('bot',data.answer);
+}
+function append(role,msg){
+  const div=document.createElement('div');
+  div.className=role;
+  div.textContent=(role==='me'?'> ':'')+msg;
+  document.getElementById('log').appendChild(div);
+  div.scrollIntoView();
+}
+</script>
+</body>
+</html>

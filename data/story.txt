@@ -1,0 +1,25 @@
+My name is Bilva Sai Eswar Maddi. I live in Dallas, Texas, USA.
+
+I was born in Tenali, Andhra Pradesh, India.
+
+I am twenty-two years old.
+
+My favorite subject this semester is Artificial Intelligence.
+
+I wake up at 5 a.m. every weekday and practice Isha Yoga for forty minutes.
+
+After school I usually play basketball with my friends at the park.what 
+
+I work part-time as a junior developer writing REST APIs in Python and FastAPI.
+
+On weekends I sketch interface ideas for my startup, Brew-N-Fill Coffee.
+
+My long-term goal is to become a site-reliability engineer and later open a tech training center for rural youth in India.
+
+
+
+
+
+
+
+
