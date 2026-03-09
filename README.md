@@ -37,36 +37,10 @@
 
 </div>
 
-## 🎬 Live Demo & Screenshots
+## Screenshots
+![alt text](image.png)
+![alt text](image-1.png)
 
-### 🔗 [View Live Project](https://maddibilvasai4125.github.io/Groundwater-Data-Interpretation-Platform/)
-
-### Homepage - Data Visualization Portal
-![Homepage](screenshots/homepage.png)
-*Modern, intuitive interface with easy navigation*
-
-### Interactive Isotope Data Visualization
-![Isotopes India Map](screenshots/isotopes-india.png)
-*Comprehensive isotope distribution across India with interactive filters*
-
-![Tamil Nadu Isotope](screenshots/isotopes-tamilnadu.png)
-*Detailed δ18O vs δD scatter plots for Tamil Nadu regions*
-
-### Groundwater Parameter Maps
-![PH Levels Map](screenshots/ph-levels-map.png)
-*State-wise pH levels visualization with gradient color coding*
-
-![Maharashtra Detailed](screenshots/maharashtra-detail.png)
-*Interactive hover tooltips showing detailed state-level statistics*
-
-### State-wise Scatter Plot Analysis
-![Kerala Scatter Plot](screenshots/kerala-scatter.png)
-*Dual scatter plot analysis for Kerala groundwater parameters*
-
-![Tamil Nadu Analysis](screenshots/tamilnadu-plots.png)
-*Comprehensive isotopic analysis for Tamil Nadu locations*
-
----
 
 ## 📌 Table of Contents
 
@@ -166,13 +140,13 @@ This project was born to answer that question.
 ## 🏗️ System Architecture
 
 ```
-╔══════════════════════════════════════════════════════════════════════════╗
+╔═════════════════════════════════════════════════════════════════════════╗
 ║                     CLIENT LAYER (React.js)                             ║
-║  ┌──────────┐  ┌──────────┐  ┌──────────┐  ┌──────────┐  ┌──────────┐  ║
-║  │  Product │  │   Cart   │  │ Checkout │  │ Chatbot  │  │  Ticket  │  ║
-║  │  Catalog │  │ & Orders │  │ Razorpay │  │   UI     │  │  Portal  │  ║
-║  └──────────┘  └──────────┘  └──────────┘  └──────────┘  └──────────┘  ║
-╠══════════════════════════════════════════════════════════════════════════╣
+║  ┌──────────┐  ┌──────────┐  ┌──────────┐  ┌──────────┐  ┌──────────┐   ║
+║  │  Product │  │   Cart   │  │ Checkout │  │ Chatbot  │  │  Ticket  │   ║
+║  │  Catalog │  │ & Orders │  │ Razorpay │  │   UI     │  │  Portal  │   ║
+║  └──────────┘  └──────────┘  └──────────┘  └──────────┘  └──────────┘   ║
+╠═════════════════════════════════════════════════════════════════════════╣
 ║                   API GATEWAY (Express.js / Node.js)                    ║
 ║   REST APIs  │  Auth Middleware  │  Rate Limiting  │  Session Mgmt      ║
 ╠══════════════════════╦═══════════════════════╦══════════════════════════╣
@@ -184,15 +158,15 @@ This project was born to answer that question.
 ║  │ Ticket Svc     │  ║  │ Engine          │  ║  └────────────────────┘  ║
 ║  └────────────────┘  ║  └─────────────────┘  ║                          ║
 ╠══════════════════════╩═══════════════════════╩══════════════════════════╣
-║                    IBM CLOUD INTEGRATION LAYER                           ║
-║         IBM Watson Assistant (NLU + Dialog + Intent Recognition)         ║
-╠══════════════════════════════════════════════════════════════════════════╣
-║                       DATA LAYER (MongoDB)                               ║
+║                    IBM CLOUD INTEGRATION LAYER                          ║
+║         IBM Watson Assistant (NLU + Dialog + Intent Recognition)        ║
+╠═════════════════════════════════════════════════════════════════════════╣
+║                       DATA LAYER (MongoDB)                              ║
 ║   Users │ Products │ Orders │ Cart │ Tickets │ Chat Logs │ Sentiments   ║
-╠══════════════════════════════════════════════════════════════════════════╣
-║                    INFRASTRUCTURE LAYER (Docker)                         ║
-║   Web Container │ API Container │ Flask Container │ MongoDB Container    ║
-╚══════════════════════════════════════════════════════════════════════════╝
+╠═════════════════════════════════════════════════════════════════════════╣
+║                    INFRASTRUCTURE LAYER (Docker)                        ║
+║   Web Container │ API Container │ Flask Container │ MongoDB Container   ║
+╚═════════════════════════════════════════════════════════════════════════╝
 ```
 
 ### 🤖 Chatbot Architecture (IBM Watson)
@@ -708,25 +682,25 @@ The entire platform — Node.js, Flask, MongoDB, Nginx — runs in isolated Dock
 ### Docker Architecture
 
 ```
-┌──────────────────────────────────────────────┐
-│              Docker Host Machine              │
-│                                              │
+┌─────────────────────────────────────────────┐
+│              Docker Host Machine            │
+│                                             │
 │  ┌──────────┐  ┌──────────┐  ┌──────────┐   │
 │  │  nginx   │  │  web     │  │  api     │   │
 │  │  :80/443 │  │  React   │  │  Node.js │   │
 │  │  (proxy) │  │  :3000   │  │  :3001   │   │
 │  └────┬─────┘  └──────────┘  └────┬─────┘   │
-│       │                           │          │
-│  ┌────▼──────────────────────┐    │          │
-│  │        Internal Network   │◄───┘          │
-│  └────┬─────────────┬────────┘               │
-│       │             │                        │
+│       │                           │         │
+│  ┌────▼──────────────────────┐    │         │
+│  │        Internal Network   │◄───┘         │
+│  └────┬─────────────┬────────┘              │
+│       │             │                       │
 │  ┌────▼─────┐  ┌────▼──────┐                │
 │  │  flask   │  │  mongodb  │                │
 │  │  Python  │  │  :27017   │                │
 │  │  :5000   │  │           │                │
 │  └──────────┘  └───────────┘                │
-└──────────────────────────────────────────────┘
+└─────────────────────────────────────────────┘
 ```
 
 ### docker-compose.yml
